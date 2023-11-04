@@ -11,7 +11,7 @@ module.exports = {
     asyncWebAssembly: true,
   },
   entry: {
-    index: "./pkg/index.js",
+    index: "./js/index",
   },
   output: {
     path: dist,
@@ -28,4 +28,21 @@ module.exports = {
       crateDirectory: __dirname,
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.?jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-react']
+          }
+        }
+      },
+    ]
+  },
 };
