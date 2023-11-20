@@ -1,4 +1,4 @@
-use wasm_react::{h, hooks::use_state, Callback, Component, VNode};
+use wasm_react::{h, hooks::use_state, props::Style, Callback, Component, VNode};
 
 pub struct Counter {
     pub initial_counter: i32,
@@ -9,7 +9,9 @@ impl Component for Counter {
         let counter = use_state(|| self.initial_counter);
 
         let vnode = h!(div).build((
-            h!(p).build(("Counter: ", *counter.value())),
+            h!(p)
+                .style(&Style::new().color("green"))
+                .build(("Counter: ", *counter.value())),
             h!(button)
                 .on_click(&Callback::new({
                     let mut counter = counter.clone();
