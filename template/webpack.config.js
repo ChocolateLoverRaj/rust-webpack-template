@@ -27,7 +27,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html"
+      template: "index.html",
     }),
     new WasmPackPlugin({
       crateDirectory: __dirname,

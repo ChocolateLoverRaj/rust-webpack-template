@@ -33,6 +33,7 @@ wee_alloc = { version = "0.4.2", optional = true }
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`.
 console_error_panic_hook = "0.1.5"
+leptos = { version = "0.6.5", features = ["csr", "nightly"] }
 
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
